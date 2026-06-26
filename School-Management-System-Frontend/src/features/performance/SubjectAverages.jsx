@@ -227,7 +227,7 @@ function SubjectAverages() {
 
                   {/* Top summary chips */}
                   <Stack
-                    direction={{ xs: "column", sm: "row" }}
+                    direction= "column" 
                     spacing={1}
                     flexWrap="wrap"
                   >

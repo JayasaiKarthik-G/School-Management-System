@@ -329,7 +329,7 @@ function StudentPerformance() {
 
                           <Stack
                             direction={{ xs: "column", sm: "row" }}
-                            spacing={2}
+                            spacing={1}
                             flexWrap="wrap"
                           >
                             <Chip
@@ -341,7 +341,8 @@ function StudentPerformance() {
                               label={`Total Score: ${exam.totalScore ?? "-"}`}
                               sx={{
                                 backgroundColor: "#1e293b",
-                                color: "#f8fafc"
+                                color: "#f8fafc",
+                                fontSize: "0.75rem"
                               }}
                             />
 
@@ -354,7 +355,8 @@ function StudentPerformance() {
                               label={`Average Score: ${exam.averageScore ?? "-"}`}
                               sx={{
                                 backgroundColor: "#1e293b",
-                                color: "#f8fafc"
+                                color: "#f8fafc",
+                                fontSize: "0.75rem"
                               }}
                             />
 
@@ -367,7 +369,8 @@ function StudentPerformance() {
                               label={`Exam ID: ${exam.examId ?? "-"}`}
                               sx={{
                                 backgroundColor: "#1e293b",
-                                color: "#f8fafc"
+                                color: "#f8fafc",
+                                fontSize: "0.75rem"
                               }}
                             />
                           </Stack>
