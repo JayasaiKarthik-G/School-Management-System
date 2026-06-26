@@ -1,0 +1,1 @@
+import { createSlice } from "@reduxjs/toolkit"; export default createSlice({name:"exams",initialState:{items:[]},reducers:{}}).reducer;

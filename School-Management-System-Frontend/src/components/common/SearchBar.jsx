@@ -1,0 +1,1 @@
+import { TextField } from "@mui/material"; export default function SearchBar(props){ return <TextField fullWidth {...props} />; }
