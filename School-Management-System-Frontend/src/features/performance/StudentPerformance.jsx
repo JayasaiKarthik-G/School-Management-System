@@ -30,6 +30,7 @@ function StudentPerformance() {
   const [studentId, setStudentId] = useState("");
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [searched, setSearched] = useState(false);
 
   const [popup, setPopup] = useState({
     open: false,
@@ -65,6 +66,7 @@ function StudentPerformance() {
     }
 
     setLoading(true);
+    setSearched(true);
     setData(null);
 
     try {
@@ -147,9 +149,23 @@ function StudentPerformance() {
           </Stack>
         </FormCard>
 
-        {loading && <LoaderBox />}
-
-        {!loading && data && (
+        {loading ? ( <LoaderBox />)
+        : !loading && searched && !data ? (
+          <Paper
+            elevation={0}
+            sx={{
+              p: 3,
+              backgroundColor: "#0f172a",
+              border: "1px solid #1e293b",
+              borderRadius: 3
+            }}
+          >
+            <Typography sx={{ color: "#cbd5e1" }}>
+              No student performance data found
+            </Typography>
+          </Paper>
+        ) : !loading && data ? (
+    
           <>
             <Paper
               elevation={0}
@@ -464,7 +480,7 @@ function StudentPerformance() {
               )}
             </Stack>
           </>
-        )}
+        ): null}
       </Stack>
 
       <Snackbar

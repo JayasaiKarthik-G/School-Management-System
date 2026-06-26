@@ -22,6 +22,7 @@ function StudentExamPerformance() {
   const [examId, setExamId] = useState("");
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [searched, setSearched] = useState(false);
 
   const [popup, setPopup] = useState({
     open: false,
@@ -57,6 +58,7 @@ function StudentExamPerformance() {
     }
 
     setLoading(true);
+    setSearched(true);
 
     try {
       const result = await performanceApi.studentExam(studentId, examId);
@@ -143,9 +145,23 @@ function StudentExamPerformance() {
           </Stack>
         </FormCard>
 
-        {loading && <LoaderBox />}
+        {loading ? (<LoaderBox />) 
 
-        {!loading && data && (
+        : !loading && searched && !data ? (
+          <Paper
+            elevation={0}
+            sx={{
+              p: 3,
+              backgroundColor: "#0f172a",
+              border: "1px solid #1e293b",
+              borderRadius: 3
+            }}
+          >
+            <Typography sx={{ color: "#cbd5e1" }}>
+              No student exam performance found
+            </Typography>
+          </Paper>
+        ) : !loading && data ? (
           <>
             <Paper
               elevation={0}
@@ -376,7 +392,7 @@ function StudentExamPerformance() {
               )}
             </Stack>
           </>
-        )}
+        ): null}
       </Stack>
 
       <Snackbar
