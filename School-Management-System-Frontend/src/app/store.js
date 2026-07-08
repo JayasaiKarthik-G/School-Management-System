@@ -8,7 +8,7 @@ import markReducer from "../features/marks/markSlice";
 import performanceReducer from "../features/performance/performanceSlice";
 import reportReducer from "../features/reports/reportSlice";
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     auth: authReducer,
     dashboard: dashboardReducer,
@@ -20,3 +20,5 @@ export const store = configureStore({
     reports: reportReducer
   }
 });
+
+export default store;

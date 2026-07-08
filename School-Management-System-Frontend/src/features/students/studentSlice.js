@@ -1,1 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit"; export default createSlice({name:"students",initialState:{items:[]},reducers:{}}).reducer;
+import { createSlice } from "@reduxjs/toolkit";
+
+const studentsSlice = createSlice({
+  name: "students",
+  initialState: {
+    items: []
+  },
+  reducers: {}
+});
+
+export default studentsSlice.reducer;

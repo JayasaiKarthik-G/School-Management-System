@@ -1,6 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit"; 
-export default createSlice({
-    name:"performance",
-    initialState:{items:[]},
-    reducers:{}}
-).reducer;
+import { createSlice } from "@reduxjs/toolkit";
+
+const performanceSlice = createSlice({
+  name: "performance",
+  initialState: {
+    items: []
+  },
+  reducers: {}
+});
+
+export default performanceSlice.reducer;

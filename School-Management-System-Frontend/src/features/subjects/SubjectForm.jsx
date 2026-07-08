@@ -1,4 +1,4 @@
-import { Alert, Button, Snackbar, Stack, TextField } from "@mui/material";
+import { Alert, Autocomplete, Button, Snackbar, Stack, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import PageTitle from "../../components/common/PageTitle";
@@ -133,11 +133,25 @@ function SubjectForm() {
         />
 
         <FormCard onSubmit={handleSubmit}>
-          <TextField
-            label="Subject Name"
+          <Autocomplete
+            freeSolo
+            options={[
+              "Mathematics",
+              "Physics",
+              "Chemistry",
+              "Biology",
+              "Botany",
+              "Zoology"
+            ]}
             value={formData.subjectName}
-            onChange={(event) => handleChange("subjectName", event.target.value)}
-            fullWidth
+            onInputChange={(_, value) => handleChange("subjectName", value)}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label="Subject Name"
+                fullWidth
+              />
+            )}
           />
 
           <TextField
