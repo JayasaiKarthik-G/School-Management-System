@@ -9,4 +9,4 @@ RUN ./mvnw clean package -DskipTests
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "java -jar target/*.jar"]
+ENTRYPOINT ["java", "-jar", "target/School_Management_System_Backend-0.0.1-SNAPSHOT.jar"]
